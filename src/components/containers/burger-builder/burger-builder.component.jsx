@@ -33,6 +33,10 @@ class BurgerBuilder extends Component {
     this.setState({ purchasing: true });
   };
 
+  purchaseCancelHandler = () => {
+    this.setState({ purchasing: false });
+  };
+
   updatePurchaseState(ingredients) {
     const sum = Object.keys(ingredients)
       .map((igKey) => {
@@ -85,7 +89,7 @@ class BurgerBuilder extends Component {
 
     return (
       <Fragment>
-        <Model show={this.state.purchasing}>
+        <Model show={this.state.purchasing} modelClosed={this.purchaseCancelHandler}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Model>
         <Burger ingredients={this.state.ingredients} />
