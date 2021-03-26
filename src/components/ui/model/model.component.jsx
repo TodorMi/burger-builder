@@ -3,9 +3,11 @@ import Backdrop from '../backdrop/backdrop.component';
 import './model.component.css';
 
 class Model extends Component {
-  
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.show !== this.props.show;
+    return (
+      nextProps.show !== this.props.show ||
+      nextProps.children !== this.props.children
+    );
   }
 
   componentDidUpdate() {
