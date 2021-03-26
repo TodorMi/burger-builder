@@ -1,12 +1,15 @@
 .logo {
     background-color: white;
     padding: 8px;
-    height: 80%;
+    width: auto;
+    height: 90%;
     box-sizing: border-box;
     border-radius: 5px;
 }
 
 .logo img {
+    width:auto;
     height: 100%;
-
+    
 }
+
