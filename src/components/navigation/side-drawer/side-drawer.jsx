@@ -8,9 +8,9 @@ const SideDrawer = (props) => {
   return (
     <Fragment>
       <Backdrop show={props.open} clicked={props.closed} />
-      <div className={`side-drawer ${props.open ? 'open' : 'close'}`}>
+      <div className={`side-drawer ${props.open ? 'open' : 'close'}` } onClick={props.closed}>
         <nav>
-          <NavigationItems />
+          <NavigationItems isAuthenticated={props.isAuth} />
         </nav>
         <Logo />
       </div>

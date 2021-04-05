@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/action-types';
-import { updateObject } from '../utility';
+import { updateObject } from '../../shared/utility';
 
 const initialState = {
   orders: [],
@@ -12,12 +12,9 @@ const PurchaseInit = (state, action) => {
   });
 };
 const PurchaseBurgerStart = (state, action) => {
-  return updateObject(state, console.log('[PurchaseStart]', state), {
+  return updateObject(state, {
     loading: true,
-
-    //false
-  },  console.log("[PurchaseStart2]",state));
-  
+  });
 };
 const PurchaseBurgerSuccess = (state, action) => {
   const newOrder = updateObject(action.orderData, {
@@ -30,10 +27,13 @@ const PurchaseBurgerSuccess = (state, action) => {
   });
 };
 const PurchaseBurgerFail = (state, action) => {
-  return updateObject(state, console.log(state), {
-    loading: false,
-    purchased: false,
-  }, console.log("[PurchaseFail]", updateObject(state)));
+  return updateObject(
+    state,
+    {
+      loading: false,
+      purchased: false,
+    },
+  );
 };
 const FetchOrdersStart = (state, action) => {
   return updateObject(state, {
